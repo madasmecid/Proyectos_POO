@@ -18,8 +18,18 @@ public class Main {
         
         Mascota perro1 = new Mascota ("Cholo", "Pedro", 4);
         
+        Mascota gato1 = new Mascota();
+        gato1.setNombre("Leche");
+        gato1.setDuenio("jose");
+        gato1.setNumeroPatas(4);
+        
+        
         
         System.out.println(perro1.toString());
+        
+        System.out.println("\nDatos del gato 1: " + gato1.toString());
+        
+        
         
     }
     
