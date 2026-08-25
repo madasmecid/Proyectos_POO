@@ -1,2 +1,19 @@
-/Mascotas/nbproject/private/
-/Mascotas/build/
+# Java
+**/*.class
+
+# NetBeans
+**/build/
+**/dist/
+
+# Logs
+**/*.log
+
+# Windows
+Thumbs.db
+Desktop.ini
+
+# VS Code
+.vscode/
+
+# IntelliJ
+.idea/
