@@ -29,7 +29,7 @@ public class Main {
         
         System.out.println("\nDatos del gato 1: " + gato1.toString());
         
-        
+        //se aagregan dos mascotas
         
     }
     
