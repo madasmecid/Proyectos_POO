@@ -25,7 +25,7 @@ public class Main {
         
         
         
-        System.out.println(perro1.toString());
+        System.out.println("Datos perro 1: " + perro1.toString());
         
         System.out.println("\nDatos del gato 1: " + gato1.toString());
         
