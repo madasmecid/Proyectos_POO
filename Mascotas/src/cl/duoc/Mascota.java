@@ -8,51 +8,63 @@ package cl.duoc;
  *
  * @author Compu
  */
-public class Mascota {
+public abstract class Mascota {
     
     private String nombre;
     private String duenio;
-    private int numeroPatas;
-    
+    private String ciudad;
     
     public Mascota(){
         
     }
 
-    public Mascota(String nombre, String dueño, int numeroPatas) {
-       this.nombre = nombre;
-       this.duenio = duenio;
-       this.numeroPatas = numeroPatas;
+    public Mascota(String nombre, String duenio, String ciudad) {
+        this.nombre = nombre;
+        this.duenio = duenio;
+        this.ciudad = ciudad;
     }
-    
-    public String getNombre(){
+
+    public String getNombre() {
         return nombre;
     }
-    
-    public void setNombre(String nombre){
+
+    public void setNombre(String nombre) {
         this.nombre = nombre;
     }
-    
-    public String getDuenio(){
+
+    public String getDuenio() {
         return duenio;
     }
-    
-    public void setDuenio(String duenio){
+
+    public void setDuenio(String duenio) {
         this.duenio = duenio;
     }
-    
-    public int getNumeroPatas(){
-        return numeroPatas;
+
+    public String getCiudad() {
+        return ciudad;
     }
-    
-    public void setNumeroPatas(int numeroPatas){
-        this.numeroPatas = numeroPatas;
+
+    public void setCiudad(String ciudad) {
+        this.ciudad = ciudad;
     }
 
     @Override
     public String toString() {
-        return "Mascota{" + "nombre=" + nombre + ", duenio=" + duenio + ", numeroPatas=" + numeroPatas + '}';
+        return "Mascota{" + "nombre=" + nombre + ", duenio=" + duenio + ", ciudad=" + ciudad + '}';
     }
+    
+    
+    abstract void hacerSonido();
+
+    
+    
+    
+
+   
+    
+    
+   
+
     
     
     

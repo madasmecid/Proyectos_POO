@@ -16,20 +16,22 @@ public class Main {
     public static void main(String[] args) {
         
         
-        Mascota perro1 = new Mascota ("Cholo", "Pedro", 4);
+       Terrestre gato1 = new Terrestre (4,"leche", "Susan", "San Bernardo");
+       
+        System.out.println("El nuevo gato se llama " + gato1.getNombre()+ ", su duenia es " + gato1.getDuenio()+ " y es de la ciudad de " + gato1.getCiudad());
         
-        Mascota gato1 = new Mascota();
-        gato1.setNombre("Leche");
-        gato1.setDuenio("jose");
-        gato1.setNumeroPatas(4);
+        gato1.hacerSonido();
         
+        gato1.correr();
         
+        Volador loro1 = new Volador (2, "Pepito", "Jose", "Penaflor");
         
-        System.out.println("Datos perro 1: " + perro1.toString());
+        System.out.println(loro1.toString());
         
-        System.out.println("\nDatos del gato 1: " + gato1.toString());
+        loro1.hacerSonido();
         
-        //se aagregan dos mascotas
+        loro1.volar();
+       
         
     }
     
