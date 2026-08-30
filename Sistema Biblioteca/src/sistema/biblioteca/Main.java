@@ -1,11 +1,14 @@
 
 package sistema.biblioteca;
+import java.util.ArrayList;
 
 
 public class Main {
 
   
     public static void main(String[] args) {
+        
+        ArrayList<Material> biblioteca = new ArrayList<>();
         
         
        Libro libro1 = new Libro("sss","ssdd", "wssdd", "ssds", "ssdad", "sssad", "sssss");
@@ -14,19 +17,20 @@ public class Main {
        
        Ebook ebook1 = new Ebook("fds","sda", "wdfsad", "dfasd", "fdsda", "wdfsad", "dwsda", 4.5);
        
-       libro1.prestar();
-       revista1.prestar();
-       libro1.buscarLibrosMismoAutor();
-       revista1.consultarMismoContenido();
+       biblioteca.add(libro1);
+       biblioteca.add(ebook1);
+       biblioteca.add(revista1);
        
-       ebook1.descargar();
-       ebook1.buscarLibrosMismoAutor();
-       
-        System.out.println("\n "+ libro1.toString());
-        System.out.println("\n "+ ebook1.toString());
-
-        System.out.println("\n "+ revista1.toString());
-
+        //System.out.println(biblioteca.size());
+        
+        //System.out.println("primer elemento: " + biblioteca.get(0));
+        
+        for (int i = 0; i < biblioteca.size(); i++){
+            
+            
+            biblioteca.get(i).prestar();
+            
+        }
      
     }
     
