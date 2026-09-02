@@ -1,0 +1,66 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+package gestionpersonalhospitalario;
+
+/**
+ *
+ * @author Compu
+ */
+public class Medico extends Personal{
+    private String especialidad;
+    private int aniosExperiencia;
+
+    public Medico() {
+    }
+
+    public Medico(String especialidad, int aniosExperiencia) {
+        this.especialidad = especialidad;
+        this.aniosExperiencia = aniosExperiencia;
+    }
+
+    public Medico(String especialidad, int aniosExperiencia, String nombre, String rut, String fechaNac) {
+        super(nombre, rut, fechaNac);
+        this.especialidad = especialidad;
+        this.aniosExperiencia = aniosExperiencia;
+    }
+
+    public String getEspecialidad() {
+        return especialidad;
+    }
+
+    public void setEspecialidad(String especialidad) {
+        this.especialidad = especialidad;
+    }
+
+    public int getAniosExperiencia() {
+        return aniosExperiencia;
+    }
+
+    public void setAniosExperiencia(int aniosExperiencia) {
+        this.aniosExperiencia = aniosExperiencia;
+    }
+
+    @Override
+    public String toString() {
+        return "Medico " + "especialidad=" + especialidad + ", aniosExperiencia=" + aniosExperiencia +" - " + super.toString();
+    }
+    
+    
+    
+    public void atenderPaciente(){
+        System.out.println("Atiende a su siguiente paciente");
+    }
+
+    @Override
+    void realizarTrabajo() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    @Override
+    public void capacitable() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+    
+}
