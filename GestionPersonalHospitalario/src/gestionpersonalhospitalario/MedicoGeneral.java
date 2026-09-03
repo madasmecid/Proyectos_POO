@@ -34,7 +34,7 @@ public class MedicoGeneral extends Medico{
     }
 
     public void setCantidadConsultasDiarias(int cantidadConsultasDiarias) {
-        if (cantidadConsultasDiarias == 0){
+        if (cantidadConsultasDiarias >= 0){
         this.cantidadConsultasDiarias = cantidadConsultasDiarias;
         }else{
             System.out.println("La cantidad de consultas no puede ser menor a 0");

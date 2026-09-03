@@ -33,7 +33,7 @@ public class Cirujano extends Medico{
     }
 
     public void setCantidadCirugiasRealizadas(int cantidadCirugiasRealizadas) {
-        if (cantidadCirugiasRealizadas == 0){
+        if (cantidadCirugiasRealizadas >= 0){
         this.cantidadCirugiasRealizadas = cantidadCirugiasRealizadas;
         }else{
             System.out.println("La cantidad de cirujias no puede ser menor a 0");
@@ -48,6 +48,7 @@ public class Cirujano extends Medico{
     
     
     public void realizarCirugia(){
+        cantidadCirugiasRealizadas += 1;
         System.out.println("Se realiza cirugia");
     }
     

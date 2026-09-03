@@ -8,7 +8,7 @@ package gestionpersonalhospitalario;
  *
  * @author Compu
  */
-public class Medico extends Personal{
+public abstract class Medico extends Personal{
     private String especialidad;
     private int aniosExperiencia;
 
@@ -54,13 +54,11 @@ public class Medico extends Personal{
     }
 
     @Override
-    void realizarTrabajo() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
+    abstract void realizarTrabajo();
+      
 
     @Override
-    public void capacitable() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
+    abstract public void capacitable();
+    
     
 }
