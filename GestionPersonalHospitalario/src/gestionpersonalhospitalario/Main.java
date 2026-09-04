@@ -4,6 +4,8 @@
  */
 package gestionpersonalhospitalario;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author Compu
@@ -12,6 +14,8 @@ public class Main {
 
     
     public static void main(String[] args) {
+        
+        ArrayList<Personal> personal = new ArrayList<>();
         
         Cirujano cirujano1 = new Cirujano();
         cirujano1.setNombre("Jose");
@@ -59,7 +63,47 @@ public class Main {
         System.out.println("La nueva recepcionista " + recepcionista1.getNombre()+ " se le asigno el horario " + recepcionista1.getHorarioTrabajo());
         
         recepcionista1.registrarPAciente();
+        System.out.println("------------------------------------------------");
+
+        
+        personal.add(contador1);
+        personal.add(cirujano1);
+        personal.add(recepcionista1);
+        
+        System.out.println("En este momento tenemos "+ personal.size()+ " personas trabajando en el sistema");
+        
+        String nombreBuscar = "Jose";
+        
+        boolean encontrado = false;
+        
+        for (int i = 0; i < personal.size(); i++){
+            System.out.println(personal.get(i).toString());
+            personal.get(i).realizarTrabajo();
+            
+            if (nombreBuscar.equals(personal.get(i).getNombre())){
+                System.out.println("Trabajador encontrado");
+                encontrado = true;
+            }   
+        }
+        if(!encontrado){
+            System.out.println("Personal no registrado");
+        }
+        
+        int trabajadorPilar = 0;
+        
+        for (int e = 0; e < personal.size(); e++){
+            if("Pilar".equals(personal.get(e).getNombre())){
+                trabajadorPilar +=1;
+                
+            }
+        }
+        
+        System.out.println("trabajador con el nombre pilar registrados: "+ trabajadorPilar);
+        
+                
 
     }
     
 }
+
+//REVISAR HORARIOS DE PERSONAL Y AGREGAR EN PERSONAL, REALIZAR CAMBIO EN TODAS LAS CLASES.

@@ -53,7 +53,7 @@ public class Contador extends Administrativo {
 
     @Override
     void realizarTrabajo() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        System.out.println("Realiza su pega");
     }
     
 }

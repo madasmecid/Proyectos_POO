@@ -57,7 +57,7 @@ public class Recepcionista extends Administrativo {
 
     @Override
     void realizarTrabajo() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        System.out.println("Se pone a trabajar");
     }
 
     @Override
