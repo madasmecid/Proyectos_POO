@@ -20,11 +20,13 @@ public abstract class Medico extends Personal{
         this.aniosExperiencia = aniosExperiencia;
     }
 
-    public Medico(String especialidad, int aniosExperiencia, String nombre, String rut, String fechaNac) {
-        super(nombre, rut, fechaNac);
+    public Medico(String especialidad, int aniosExperiencia, String nombre, String rut, String fechaNac, String horarioTrabajo) {
+        super(nombre, rut, fechaNac, horarioTrabajo);
         this.especialidad = especialidad;
         this.aniosExperiencia = aniosExperiencia;
     }
+
+    
 
     public String getEspecialidad() {
         return especialidad;

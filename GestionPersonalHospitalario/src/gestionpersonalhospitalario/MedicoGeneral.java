@@ -19,15 +19,12 @@ public class MedicoGeneral extends Medico{
         this.cantidadConsultasDiarias = cantidadConsultasDiarias;
     }
 
-    public MedicoGeneral(int cantidadConsultasDiarias, String especialidad, int aniosExperiencia) {
-        super(especialidad, aniosExperiencia);
+    public MedicoGeneral(int cantidadConsultasDiarias, String especialidad, int aniosExperiencia, String nombre, String rut, String fechaNac, String horarioTrabajo) {
+        super(especialidad, aniosExperiencia, nombre, rut, fechaNac, horarioTrabajo);
         this.cantidadConsultasDiarias = cantidadConsultasDiarias;
     }
 
-    public MedicoGeneral(int cantidadConsultasDiarias, String especialidad, int aniosExperiencia, String nombre, String rut, String fechaNac) {
-        super(especialidad, aniosExperiencia, nombre, rut, fechaNac);
-        this.cantidadConsultasDiarias = cantidadConsultasDiarias;
-    }
+    
 
     public int getCantidadConsultasDiarias() {
         return cantidadConsultasDiarias;

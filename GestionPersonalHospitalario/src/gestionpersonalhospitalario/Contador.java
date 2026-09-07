@@ -19,6 +19,8 @@ public class Contador extends Administrativo {
         this.presupuestoAdministrativo = presupuestoAdministrativo;
     }
 
+    
+
     public int getPresupuestoAdministrativo() {
         return presupuestoAdministrativo;
     }

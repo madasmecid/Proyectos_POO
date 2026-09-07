@@ -9,20 +9,14 @@ package gestionpersonalhospitalario;
  * @author Compu
  */
 public abstract class Administrativo extends Personal{
-    private String departamento, horarioTrabajo;
+    private String departamento;
 
     public Administrativo() {
     }
 
-    public Administrativo(String departamento, String horarioTrabajoString) {
+    public Administrativo(String departamento, String nombre, String rut, String fechaNac, String horarioTrabajo) {
+        super(nombre, rut, fechaNac, horarioTrabajo);
         this.departamento = departamento;
-        this.horarioTrabajo = horarioTrabajoString;
-    }
-
-    public Administrativo(String departamento, String horarioTrabajo, String nombre, String rut, String fechaNac) {
-        super(nombre, rut, fechaNac);
-        this.departamento = departamento;
-        this.horarioTrabajo = horarioTrabajo;
     }
 
     public String getDepartamento() {
@@ -32,18 +26,18 @@ public abstract class Administrativo extends Personal{
     public void setDepartamento(String departamento) {
         this.departamento = departamento;
     }
+    
+    
+    
+    
+    
+    
+       
 
-    public String getHorarioTrabajo() {
-        return horarioTrabajo;
-    }
-
-    public void setHorarioTrabajo(String horarioTrabajo) {
-        this.horarioTrabajo = horarioTrabajo;
-    }
 
     @Override
     public String toString() {
-        return "Administrativo " + "departamento=" + departamento + ", horarioTrabajo=" + horarioTrabajo + " - "+ super.toString();
+        return "Administrativo " + "departamento=" + departamento + ", horarioTrabajo=" + " - "+ super.toString();
     }
     
     

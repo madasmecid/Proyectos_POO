@@ -31,6 +31,7 @@ public class Main {
         
         cirujano1.realizarCirugia();
         cirujano1.realizarCirugia();
+        cirujano1.setHorarioTrabajo("DIURNO");
 
         
         System.out.println("------------------------------");
@@ -49,6 +50,7 @@ public class Main {
         
         contador1.generarInformeFinanciero();
         
+        contador1.setHorarioTrabajo("VESPERTINO");
         contador1.capacitable();
         
         System.out.println("---------------------");
@@ -59,6 +61,7 @@ public class Main {
         recepcionista1.setNombre("Pilar");
         recepcionista1.setHorarioTrabajo("Diurno");
         recepcionista1.setDepartamento("Clinica infantil");
+        recepcionista1.setHorarioTrabajo("DIURNO");
         
         System.out.println("La nueva recepcionista " + recepcionista1.getNombre()+ " se le asigno el horario " + recepcionista1.getHorarioTrabajo());
         
@@ -69,6 +72,7 @@ public class Main {
         personal.add(contador1);
         personal.add(cirujano1);
         personal.add(recepcionista1);
+        
         
         System.out.println("En este momento tenemos "+ personal.size()+ " personas trabajando en el sistema");
         
@@ -89,16 +93,16 @@ public class Main {
             System.out.println("Personal no registrado");
         }
         
-        int trabajadorPilar = 0;
+        int horarioDiurno = 0;
         
         for (int e = 0; e < personal.size(); e++){
-            if("Pilar".equals(personal.get(e).getNombre())){
-                trabajadorPilar +=1;
+            if("DIURNO".equals(personal.get(e).getHorarioTrabajo())){
+                horarioDiurno +=1;
                 
             }
         }
         
-        System.out.println("trabajador con el nombre pilar registrados: "+ trabajadorPilar);
+        System.out.println("trabajador horario diurno : "+ horarioDiurno);
         
                 
 

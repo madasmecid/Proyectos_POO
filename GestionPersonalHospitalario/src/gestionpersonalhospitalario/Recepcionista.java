@@ -18,10 +18,12 @@ public class Recepcionista extends Administrativo {
         this.numeroVentanilla = numeroVentanilla;
     }
 
-    public Recepcionista(int numeroVentanilla, String departamento, String horarioTrabajoString, String nombre, String rut, String fechaNac) {
-        super(departamento, horarioTrabajoString, nombre, rut, fechaNac);
+    public Recepcionista(int numeroVentanilla, String departamento, String horarioTrabajo, String nombre, String rut, String fechaNac) {
+        super(departamento, horarioTrabajo, nombre, rut, fechaNac);
         this.numeroVentanilla = numeroVentanilla;
     }
+
+   
 
     public int getNumeroVentanilla() {
         return numeroVentanilla;

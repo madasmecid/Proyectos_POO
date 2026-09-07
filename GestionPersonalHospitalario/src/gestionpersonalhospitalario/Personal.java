@@ -10,15 +10,28 @@ package gestionpersonalhospitalario;
  */
 public abstract class Personal implements Capacitable{
     
-    private String nombre, rut, fechaNac;
+    private String nombre, rut, fechaNac, horarioTrabajo;
 
     public Personal() {
     }
 
-    public Personal(String nombre, String rut, String fechaNac) {
+    public Personal(String nombre, String rut, String fechaNac, String horarioTrabajo) {
         this.nombre = nombre;
         this.rut = rut;
         this.fechaNac = fechaNac;
+        this.horarioTrabajo = horarioTrabajo;
+    }
+
+    public String getHorarioTrabajo() {
+        return horarioTrabajo;
+    }
+
+    public void setHorarioTrabajo(String horarioTrabajo) {
+        if (horarioTrabajo.equals("VESPERTINO") || horarioTrabajo.equals("DIURNO")){
+        this.horarioTrabajo = horarioTrabajo;
+        }else{
+            System.out.println("debe ser horario diurno o vespertino");
+        }
     }
 
     public String getNombre() {

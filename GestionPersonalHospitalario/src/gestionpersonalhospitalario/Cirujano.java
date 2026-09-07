@@ -23,10 +23,12 @@ public class Cirujano extends Medico{
         this.cantidadCirugiasRealizadas = cantidadCirugiasRealizadas;
     }
 
-    public Cirujano(int cantidadCirugiasRealizadas, String especialidad, int aniosExperiencia, String nombre, String rut, String fechaNac) {
-        super(especialidad, aniosExperiencia, nombre, rut, fechaNac);
+    public Cirujano(int cantidadCirugiasRealizadas, String especialidad, int aniosExperiencia, String nombre, String rut, String fechaNac, String horarioTrabajo) {
+        super(especialidad, aniosExperiencia, nombre, rut, fechaNac, horarioTrabajo);
         this.cantidadCirugiasRealizadas = cantidadCirugiasRealizadas;
     }
+
+    
 
     public int getCantidadCirugiasRealizadas() {
         return cantidadCirugiasRealizadas;
