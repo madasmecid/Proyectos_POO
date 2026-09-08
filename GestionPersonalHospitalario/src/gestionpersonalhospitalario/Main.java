@@ -23,6 +23,10 @@ public class Main {
         cirujano1.setEspecialidad("cirugias espalda");
         cirujano1.setAniosExperiencia(7);
         
+        Cirujano cirujano2 = new Cirujano();
+        cirujano2.setNombre("Marco");
+        cirujano2.setHorarioTrabajo("DIURNO");
+        
         System.out.println(cirujano1);
         
         cirujano1.capacitable();
@@ -63,6 +67,11 @@ public class Main {
         recepcionista1.setDepartamento("Clinica infantil");
         recepcionista1.setHorarioTrabajo("DIURNO");
         
+        Contador contador2 = new Contador();
+        
+        contador2.setHorarioTrabajo("DIURNO");
+        contador2.setNombre("Lechecito");
+        
         System.out.println("La nueva recepcionista " + recepcionista1.getNombre()+ " se le asigno el horario " + recepcionista1.getHorarioTrabajo());
         
         recepcionista1.registrarPAciente();
@@ -72,6 +81,9 @@ public class Main {
         personal.add(contador1);
         personal.add(cirujano1);
         personal.add(recepcionista1);
+        personal.add(contador2);
+        personal.add(cirujano2);
+        
         
         
         System.out.println("En este momento tenemos "+ personal.size()+ " personas trabajando en el sistema");
@@ -104,10 +116,55 @@ public class Main {
         
         System.out.println("trabajador horario diurno : "+ horarioDiurno);
         
-                
+        
+        System.out.println("-----------------------------");
+        
+        for(int i = 0; i < personal.size(); i++ ){
+            if ("DIURNO".equals(personal.get(i).getHorarioTrabajo()))
+                System.out.println(personal.get(i).getNombre() + ": DIURNO");
+        }
+        
+        int cantidadMedicos = 0;
+        int cantidadAdministrativos = 0;
 
+        
+        for (int i = 0; i < personal.size(); i++){
+            if (personal.get(i) instanceof Medico)
+                cantidadMedicos ++;
+            
+            if (personal.get(i) instanceof Administrativo)
+                cantidadAdministrativos ++;
+        }
+        
+        System.out.println("Cantidad de medicos: " + cantidadMedicos);
+        System.out.println("Cantidad administrativos: "+ cantidadAdministrativos);
+        
+        
+        
+        for (int i = 0; i < personal.size(); i++){
+           if (personal.get(i) instanceof Administrativo){
+                System.out.println("Administrativo: "+ personal.get(i).getNombre());}
+           
+           if (personal.get(i) instanceof Medico){
+                System.out.println("Medico: "+ personal.get(i).getNombre());}
+           
+        }
+        
+        //System.out.println("Cantidad administrativos: "+ cantidadAdministrativos);
+        
+        
+        System.out.println("------------------------------------------------");
+        
+        for (int i = 0; i < personal.size(); i++){
+            if(personal.get(i).getHorarioTrabajo().equals("DIURNO") && personal.get(i) instanceof Medico){
+                System.out.println("Medico :"+ personal.get(i).getNombre()+ " - "+ personal.get(i).getHorarioTrabajo());
+            }
+            
+            if(personal.get(i).getHorarioTrabajo().equals("DIURNO") && personal.get(i) instanceof Administrativo){
+                System.out.println("Administrativo :"+ personal.get(i).getNombre()+ " - "+ personal.get(i).getHorarioTrabajo());
+            }
+        }
     }
     
 }
 
-//REVISAR HORARIOS DE PERSONAL Y AGREGAR EN PERSONAL, REALIZAR CAMBIO EN TODAS LAS CLASES.
