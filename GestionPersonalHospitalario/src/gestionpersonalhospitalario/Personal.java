@@ -75,5 +75,5 @@ public abstract class Personal implements Capacitable{
     abstract void realizarTrabajo();
     
     
-    
+      
 }
