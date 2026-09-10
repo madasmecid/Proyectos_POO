@@ -34,14 +34,15 @@ public class Main {
         System.out.println(maestro1.getPokemones());
         
         for (Pokemon poke:maestro1.getPokemones()) {
-            System.out.println(poke.toString());
+            System.out.println(poke.getNombre());
    
         }
         
-        maestro1.liberarPokemon("Pikachu");
+        maestro1.liberarPokemon("onnix");
+        
         
         for (Pokemon poke:maestro1.getPokemones()) {
-            System.out.println(poke.toString());
+            System.out.println(poke.getNombre());
         
     }
     }

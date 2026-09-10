@@ -93,6 +93,7 @@ public abstract class Persona {
             }
             
         }
+        System.out.println("Pokemon "+ nombrePokemon +" no encontrado");
         return false;
     }
 }
