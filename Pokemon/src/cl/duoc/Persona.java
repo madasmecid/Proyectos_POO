@@ -30,7 +30,12 @@ public abstract class Persona {
     }
 
     public void setNombre(String nombre) {
-        this.nombre = nombre;
+        if(nombre.length() < 3){
+            System.out.println("El nombre no puede tener menos de 3 caracteres");
+        }else{
+            this.nombre = nombre;
+        }
+        
     }
 
     public int getEdad() {
