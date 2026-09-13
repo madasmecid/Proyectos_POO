@@ -20,6 +20,9 @@ public class Main {
         ArrayList<Personal> personal = new ArrayList<>();
         HashMap<String, Personal> trabajadores = new HashMap<>();
         
+        
+        
+        
         Cirujano cirujano1 = new Cirujano();
         cirujano1.setNombre("Jose");
         cirujano1.setRut("12233445-5");
@@ -187,6 +190,30 @@ public class Main {
         
         imprimir(trabajadores);
         
+            HashMap<String, Personal> personas = new HashMap<>(
+
+                    Map.of(
+
+                    "2", cirujano1,
+
+                    "4", contador2
+
+                    )
+
+                    );
+            
+            personas.put("e", recepcionista1);
+            
+            System.out.println("______________");
+            
+            System.out.println(personas.get("4").getNombre());
+            System.out.println(personas.get("2").getNombre());
+            System.out.println(personas.get("2").getHorarioTrabajo());
+            System.out.println(personas.get("e").getNombre());
+
+            
+
+        
         
     }
     
@@ -194,8 +221,11 @@ public class Main {
         for (Map.Entry<String, Personal> entry : trabajadores.entrySet()) {
             System.out.println(entry.getValue().getNombre());
             
+            
+            
         }
     }
     
+
 }
 
