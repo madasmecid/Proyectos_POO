@@ -2,6 +2,16 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
  */
+
+
+/*
+ * JUSTIFICACIÓN DEL PARADIGMA ORIENTADO A OBJETOS (IL 1.1):
+ * A diferencia del paradigma procedimental/estructurado donde los datos y los procedimientos 
+ * están desacoplados, la POO integra atributos privados y comportamientos mediante encapsulamiento.
+ * El tipado estático de Java garantiza la consistencia en tiempo de compilación, mientras que la 
+ * herencia y el polimorfismo permiten tratar colecciones uniformes (ArrayList<Servicio>) ejecutando 
+ * los cálculos especializados en tiempo de ejecución sin verificaciones manuales de tipo.
+ */
 package gestiontallermecanico;
 
 import java.util.ArrayList;
@@ -49,11 +59,24 @@ public class Main {
         }
         
         try{
-            CambioAceite aceite3 = new CambioAceite("20W50 mineral", false, "act-err", 1980, 1);
+            CambioAceite aceite3 = new CambioAceite("20W50 mineral", false, "act-err", 1990, 1);
             gestor.registrarServicio(aceite3);
         }catch (IllegalArgumentException e){
             System.out.println("Error de validacion: " + e.getMessage());
         }
+        
+        
+        
+        try{
+            MantencionFrenos frenos3 = new MantencionFrenos("45W", true, true, "ert-001", 2020, 10);
+            gestor.registrarServicio(frenos3);
+        }catch (IllegalArgumentException e){
+            System.out.println("Error: "+ e.getMessage());
+        }
+    
+
+
+    
         
         
         gestor.calcularCostosTotales();
@@ -61,16 +84,11 @@ public class Main {
         gestor.listarServicios();
        
         
-       gestor.MostrarBusqueda("frenos yari");
-        
-        System.out.println("SERVICIOS ENCONTRADOS POR ANIO");
-        
-        for(Servicio s : gestor.buscarPorCodigo("frenos yari", 2000)){
-            System.out.println(s);
-        }
-
-        
-        
+       gestor.mostrarBusqueda("frenos yari");
+       
+       gestor.mostrarBusqueda("ert-001", 2020);
+       
+       
     }
     
 }

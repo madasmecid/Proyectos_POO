@@ -4,7 +4,6 @@
  */
 package gestiontallermecanico;
 
-import java.awt.BorderLayout;
 import java.util.ArrayList;
 
 /**
@@ -70,19 +69,33 @@ public class GestorTaller {
         
     }
     
-    public void MostrarBusqueda(String Codigo){
+    public void mostrarBusqueda(String Codigo){
             System.out.println("\nSERVICIOS ENCONTRADOS");
             ArrayList<Servicio> encontrados = buscarPorCodigo(Codigo);
             
             if (encontrados.isEmpty()){
                 System.out.println("No se encontraron servicios con este codigo");
             }else{
-                for(Servicio s : encontrados)
+                for(Servicio s : encontrados){
                     System.out.println(s);
+                }
                     
                    
                     
             }
+    }
+    
+    public void mostrarBusqueda(String codigo, int annio){
+        System.out.println("SERVICIOS ENCONTRADOS POR ANIO");
+        ArrayList<Servicio> encontrados = buscarPorCodigo(codigo, annio);
+        
+        if (encontrados.isEmpty()){
+            System.out.println("No se encontraron servicios con este codigo y ese anio");
+        }else{
+            for(Servicio s : encontrados){
+                System.out.println(s);
+            }
+        }
     }
     
     
