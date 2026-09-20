@@ -34,6 +34,8 @@ public class Main {
         
         gestor.calcularTotalesFlota();
         
+        gestor.mostrarEntontrados("tyr-54");
+        
     }
     
 }

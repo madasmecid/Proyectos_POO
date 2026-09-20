@@ -56,13 +56,21 @@ public class GestorFlota {
             System.out.printf("%s: $%.0f\n", v.getPatente(),v.calcularTotalArriendo());
         }
     }
+    
+    public void mostrarEntontrados(String patente){
+        System.out.println("------- vehiculos encontrados por patente------");
+        ArrayList<Vehiculo> mostrar = buscarPorPatente(patente);
+        if (mostrar.isEmpty()){
+            System.out.println("No se encontro vehiculo con esa patente");
+        }else{
+            for(Vehiculo v: mostrar){
+                System.out.println(v.toString());
+            }
+        }
+        }
         
-        
-        
-        
+    }
     
     
     
-    
-    
-}
+
