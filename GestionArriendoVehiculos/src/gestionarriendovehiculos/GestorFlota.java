@@ -44,6 +44,16 @@ public class GestorFlota {
         return resultado;
     }
     
+    public ArrayList<Vehiculo> buscarPorPatente (String patente, int annio){
+        ArrayList<Vehiculo> resultado = new ArrayList<>();
+        for(Vehiculo v : flota){
+            if(v.getPatente().equalsIgnoreCase(patente) && v.getAnnio() == annio){
+                resultado.add(v);
+            }
+        }
+        return resultado;
+    }
+    
     
     public void listarVehiculos(){
         for(Vehiculo v : flota){
@@ -68,6 +78,18 @@ public class GestorFlota {
             }
         }
         }
+    
+    public void mostrarEncontrados(String patente, int annio){
+        System.out.println("-----------Encontrados por patente y anio-------------");
+        ArrayList<Vehiculo> mostrar = buscarPorPatente(patente, annio);
+        if(mostrar.isEmpty()){
+            System.out.println("Vehiculo no encontrado");
+        }else{
+            for( Vehiculo v : mostrar){
+                System.out.println(v.toString());
+            }
+        }
+    }
         
     }
     

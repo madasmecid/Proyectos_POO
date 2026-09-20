@@ -34,7 +34,9 @@ public class Main {
         
         gestor.calcularTotalesFlota();
         
-        gestor.mostrarEntontrados("tyr-54");
+        gestor.mostrarEntontrados("dfg-56");
+        
+        gestor.mostrarEncontrados("ttyr-54", 2019);
         
     }
     
