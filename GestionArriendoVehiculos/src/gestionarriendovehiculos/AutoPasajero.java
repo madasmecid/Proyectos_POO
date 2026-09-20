@@ -45,8 +45,12 @@ public class AutoPasajero extends Vehiculo implements ISeguroAdicional{
     @Override
     public double calcularTotalArriendo() {
         double tarifaBase = getDiasArriendo()* 25000;
-        if(cantidadPasajeros > 5){
+        if
+            (cantidadPasajeros > 5){
             tarifaBase += tarifaBase * 0.15;
+        }
+        if(aplicarSeguroCompleto()){
+            tarifaBase += 10000;
         }
         return tarifaBase;
     }

@@ -25,7 +25,7 @@ public class GestorFlota {
     
     
     
-        
+    //REgistro de vheiculos nuevos    
     public void registrarVehiculo(Vehiculo v){
         if (v == null){
           throw new IllegalArgumentException("No se puede registrar un vehiculo nulo");
@@ -34,6 +34,7 @@ public class GestorFlota {
         System.out.println("El vehiculo " + v.getPatente()+ " se registro correctamente");
     }
     
+    //Buscar por patente
     public ArrayList<Vehiculo> buscarPorPatente(String patente){
         ArrayList<Vehiculo> resultado = new ArrayList<>();
         for (Vehiculo v : flota){
@@ -43,7 +44,7 @@ public class GestorFlota {
         }
         return resultado;
     }
-    
+    //Buscar por patente y annio (Recarga)
     public ArrayList<Vehiculo> buscarPorPatente (String patente, int annio){
         ArrayList<Vehiculo> resultado = new ArrayList<>();
         for(Vehiculo v : flota){
@@ -54,20 +55,27 @@ public class GestorFlota {
         return resultado;
     }
     
-    
+    //Listar todos los vehiculos registrados
     public void listarVehiculos(){
-        for(Vehiculo v : flota){
-            System.out.println(v.toString());
+        System.out.println("-----------Lista de vehiculos----------------");
+        if (flota.isEmpty()){
+            System.out.println("No existen vehiculos para listar.");
+        }else{
+            for(Vehiculo v : flota){
+                System.out.println(v.toString());
+            }
         }
     }
     
+    //Calcular el total de cada vehiculo de la flota
     public void calcularTotalesFlota(){
         for (Vehiculo v : flota){
             System.out.printf("%s: $%.0f\n", v.getPatente(),v.calcularTotalArriendo());
         }
     }
     
-    public void mostrarEntontrados(String patente){
+    //Mostrar los encontrados por patentes usando el metodo buscar por patente solo patente
+    public void mostrarEncontrados(String patente){
         System.out.println("------- vehiculos encontrados por patente------");
         ArrayList<Vehiculo> mostrar = buscarPorPatente(patente);
         if (mostrar.isEmpty()){
@@ -79,6 +87,7 @@ public class GestorFlota {
         }
         }
     
+    //Mostrar los enconrrados por patente y annio usando el metodo buscar por patente y annio (Recarga)
     public void mostrarEncontrados(String patente, int annio){
         System.out.println("-----------Encontrados por patente y anio-------------");
         ArrayList<Vehiculo> mostrar = buscarPorPatente(patente, annio);
@@ -90,8 +99,24 @@ public class GestorFlota {
             }
         }
     }
-        
+    
+    public void eliminarPorPatente(String patente){
+        int indice = -1;
+        for(int i = 0; i < flota.size(); i++){
+            if(flota.get(i).getPatente().equalsIgnoreCase(patente))
+                indice = i;
+            }
+        if(indice >= 0){   
+            System.out.println("Se elimino el vehiculo patente " + flota.get(indice).getPatente());
+            flota.remove(indice);
+        }else{
+            System.out.println("No se encontro patente para eliminar.");
+        }
     }
+ }
+
+
+        
     
     
     

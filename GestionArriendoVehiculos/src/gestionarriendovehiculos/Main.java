@@ -17,7 +17,7 @@ public class Main {
         // TODO code application logic here
         GestorFlota gestor = new GestorFlota();
         try{
-        AutoPasajero auto1 = new AutoPasajero(7, true, "dfg-56", 2020, 5);
+        AutoPasajero auto1 = new AutoPasajero(7, false, "dfg-56", 2020, 5);
         gestor.registrarVehiculo(auto1);
         }catch (IllegalArgumentException e){
             System.out.println("Error de validacion: "+ e.getMessage());
@@ -30,13 +30,24 @@ public class Main {
             System.out.println("Error de validacion: "+ e.getMessage());
         }
         
+        try{
+            AutoPasajero auto3 = new AutoPasajero(5, true, "rrrr-2", 2026, 1);
+            gestor.registrarVehiculo(auto3);
+        }catch (IllegalArgumentException e ){
+            System.out.println("Error al registar: "+ e.getMessage());
+        }
+        
         gestor.listarVehiculos();
         
         gestor.calcularTotalesFlota();
         
-        gestor.mostrarEntontrados("dfg-56");
+        gestor.mostrarEncontrados("dfg-56");
         
         gestor.mostrarEncontrados("ttyr-54", 2019);
+        
+        gestor.eliminarPorPatente("rrrr-2");
+        
+        gestor.listarVehiculos();
         
     }
     
