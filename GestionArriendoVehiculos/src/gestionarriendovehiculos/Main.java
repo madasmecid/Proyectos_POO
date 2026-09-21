@@ -45,7 +45,7 @@ public class Main {
         
         gestor.mostrarEncontrados("ttyr-54", 2019);
         
-        gestor.eliminarPorPatente("rrrr-2");
+        gestor.eliminarPorPatente("rrr-2");
         
         gestor.listarVehiculos();
         

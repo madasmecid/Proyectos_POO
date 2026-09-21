@@ -103,8 +103,10 @@ public class GestorFlota {
     public void eliminarPorPatente(String patente){
         int indice = -1;
         for(int i = 0; i < flota.size(); i++){
-            if(flota.get(i).getPatente().equalsIgnoreCase(patente))
-                indice = i;
+            if(flota.get(i).getPatente().equalsIgnoreCase(patente)){
+                indice = i; 
+                break;
+            }
             }
         if(indice >= 0){   
             System.out.println("Se elimino el vehiculo patente " + flota.get(indice).getPatente());
