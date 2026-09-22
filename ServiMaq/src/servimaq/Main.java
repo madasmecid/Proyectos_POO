@@ -63,6 +63,8 @@ public class Main {
         gestor.eliminarOrden("90-dkk");
         
         gestor.listarOrdenes();
+        
+        gestor.mostrasDetalleOrden("rty-98");
     }
     
     

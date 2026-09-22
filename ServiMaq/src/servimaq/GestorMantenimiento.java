@@ -117,5 +117,27 @@ public class GestorMantenimiento {
         }
     }
     
+    public int buscarPosicionOrden(String codigo){
+        if (ordenes.isEmpty()){
+            System.out.println("No hay ordenes registradas aun");
+            return -1;
+        }
+        for (int i = 0; i < ordenes.size(); i++){
+                if(ordenes.get(i).getCodigoOrden().equalsIgnoreCase(codigo)){
+                    return i;
+                }
+            }
+        return -1;
+    }
+    
+    public void mostrasDetalleOrden(String Codigo){
+        int pos = buscarPosicionOrden(Codigo);
+        if (pos != -1){
+            System.out.println(ordenes.get(pos).toString());
+        }else{
+            System.out.println("Orden no encontrada");
+        }
+    }
+    
     
 }
