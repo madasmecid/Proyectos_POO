@@ -26,9 +26,10 @@ public class Main {
         }
         
         try{
-            CuentaAhorro cuentaA2 = new CuentaAhorro(0.06, "123456", 2000);
+            CuentaAhorro cuentaA2 = new CuentaAhorro(100, "123456", 2000);
             gestor.agregarCuenta(cuentaA2);
             cuentaA2.deposito(90);
+            cuentaA2.aplicaInteres();
         }catch (IllegalArgumentException e){
             System.out.println("Error: " + e.getMessage());
         }

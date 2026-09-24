@@ -58,12 +58,13 @@ public class CuentaAhorro extends CuentaBancaria {
     }
     
     public void aplicaInteres(){
-        double intereses = super.getSaldo() * tasaInteres;
-        double nuevoSaldo = super.getSaldo()+ intereses;
+        double factorDecimal = this.tasaInteres / 100.0;
+        double intereses = super.getSaldo() * factorDecimal;
+        double nuevoSaldo = Math.round(super.getSaldo()+ intereses);
         super.setSaldo(nuevoSaldo);
         
         System.out.println("Se le aplico un interes del "
-        + getTasaInteres()+ " a su saldo. nuevo saldo: "+ super.getSaldo());
+        + this.tasaInteres+ "% a su saldo. nuevo saldo: "+ (long)super.getSaldo());
         
         
     }
