@@ -35,7 +35,7 @@ public class VehiculoCarga extends Vehiculo{
 
     @Override
     public double calcularPrecioFinal() {
-        double recargoPorTonelada = 8.0 /100;
+        double recargoPorTonelada = 8.0 /100.0;
         double precioFinal = super.getPrecioBase()+ ((capacidadToneladas * recargoPorTonelada) * super.getPrecioBase());
         
         return precioFinal;

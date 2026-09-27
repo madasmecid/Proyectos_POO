@@ -15,10 +15,6 @@ public abstract class Vehiculo {
     
     abstract public double calcularPrecioFinal();
     
-    
-    public void mostrarDatos(){
-        System.out.println(getPatente() + " -- " + getPrecioBase());
-    }
 
     public Vehiculo() {
     }
@@ -40,15 +36,22 @@ public abstract class Vehiculo {
     }
 
     public double getPrecioBase() {
-        if(precioBase < 0){
-            throw new IllegalArgumentException("El precio base no puede ser menor a 0");
-        }
         return precioBase;
     }
 
     public void setPrecioBase(double precioBase) {
+        if(precioBase <= 0){
+            throw new IllegalArgumentException("El precio base no puede ser menor o 0");
+        }
         this.precioBase = precioBase;
     }
+
+    @Override
+    public String toString() {
+        return "Vehiculo{" + "patente=" + patente + ", precioBase=" + precioBase + '}';
+    }
+    
+    
     
     
     

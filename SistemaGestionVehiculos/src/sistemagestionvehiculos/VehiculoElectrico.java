@@ -42,9 +42,21 @@ public class VehiculoElectrico extends Vehiculo implements IElectronico{
     }
 
     @Override
-    public boolean recargar(int horas) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    public boolean recargar(int horas) {      
+        double carga = (horas * 20);
+        if (horas <= 0){
+            return false;
+        }else if (nivelBateria >= 0||nivelBateria < 100){
+            nivelBateria += carga;
+        }
+        if(nivelBateria >= 100){
+            nivelBateria = 100;
+        }
+        return true;
     }
+
+    
+    
     
     
 }
