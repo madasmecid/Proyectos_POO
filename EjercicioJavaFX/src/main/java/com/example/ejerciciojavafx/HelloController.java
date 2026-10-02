@@ -35,7 +35,7 @@ public class HelloController {
         }
 
         lblMensaje.setStyle("-fx-text-fill: green;");
-        lblMensaje.setText("¡Bienvenido/a, " + nombre.trim() + "!");
+        lblMensaje.setText("¡Bienvenido " + nombre.trim() + "!");
     }
 
     // Vinculado con onAction="#onLimpiarClick"

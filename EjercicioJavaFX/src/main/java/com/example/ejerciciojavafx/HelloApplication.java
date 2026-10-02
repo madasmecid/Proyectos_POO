@@ -14,7 +14,7 @@ public class HelloApplication extends Application {
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("hello-view.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 500, 350);
 
-        stage.setTitle("Ejercicio Práctico JavaFX - Duoc UC");
+        stage.setTitle("Ejercicio Práctico JavaFX ");
         stage.setScene(scene);
         stage.show();
     }
