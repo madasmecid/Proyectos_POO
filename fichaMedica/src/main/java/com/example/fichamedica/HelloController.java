@@ -1,7 +1,11 @@
 package com.example.fichamedica;
 
+import javafx.beans.Observable;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
+import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 
 import java.util.ArrayList;
@@ -16,6 +20,9 @@ public class HelloController {
      @FXML
      private TextField txtPeso;
 
+     @FXML
+     private ListView<String> listaUno;
+
 
      @FXML
      private TextField txtBuscarRut;
@@ -23,6 +30,8 @@ public class HelloController {
      private Label lblEstado;
 
      private final ArrayList<Paciente> listaPacientes = new ArrayList<>();
+
+     private ObservableList<Paciente> listaNueva = FXCollections.observableArrayList();
 
     @FXML
     private void onGuardarClick() {
@@ -68,5 +77,30 @@ public class HelloController {
             }
         }
         lblEstado.setText("no se encontro paciente con ese rut.");
+    }
+
+    @FXML
+    private void onListarCLick() {
+        try {
+            // Limpiamos los elementos visuales usando la variable correcta
+            listaUno.getItems().clear();
+
+            // Si no hay pacientes guardados, avisamos
+            if (listaPacientes.isEmpty()) {
+                lblEstado.setText("No hay pacientes registrados para listar.");
+                return;
+            }
+
+            // Recorremos tu ArrayList y los metemos al ListView
+            for (Paciente p : listaPacientes) {
+                String fila = "RUT: " + p.getRut() + " - " + p.getNombre() + " (" + p.getEdad() + " años)";
+                listaUno.getItems().add(fila);
+            }
+
+            lblEstado.setText("Lista actualizada con " + listaPacientes.size() + " pacientes.");
+        } catch (Exception e) {
+            lblEstado.setText("Error en la aplicación.");
+            e.printStackTrace();
+        }
     }
 }

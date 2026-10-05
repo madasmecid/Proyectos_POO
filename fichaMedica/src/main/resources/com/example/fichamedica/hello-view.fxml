@@ -1,37 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.TextField?>
-<?import javafx.scene.layout.VBox?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
 
-<VBox alignment="CENTER" spacing="10.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/21" fx:controller="com.example.fichamedica.HelloController">
+<VBox alignment="CENTER" prefHeight="519.0" prefWidth="189.0" spacing="10.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.fichamedica.HelloController">
     <padding>
         <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
     </padding>
 
-    <Label text="Ingreso de Paciente" style="-fx-font-weight: bold;" />
+    <Label style="-fx-font-weight: bold;" text="Ingreso de Paciente" />
 
     <TextField fx:id="txtRut" promptText="RUT (ej: 12345678-9)" />
     <TextField fx:id="txtNombre" promptText="Nombre completo" />
     <TextField fx:id="txtEdad" promptText="Edad" />
     <TextField fx:id="txtPeso" promptText="Peso (kg)" />
 
-    <Button text="Guardar Ficha" onAction="#onGuardarClick" maxWidth="Infinity" />
+    <Button maxWidth="Infinity" onAction="#onGuardarClick" text="Guardar Ficha" />
 
-    <Label text="Consulta" style="-fx-font-weight: bold;">
+    <Label style="-fx-font-weight: bold;" text="Consulta">
         <VBox.margin>
             <Insets top="15.0" />
         </VBox.margin>
     </Label>
 
     <TextField fx:id="txtBuscarRut" promptText="Buscar por RUT" />
-    <Button text="Buscar" onAction="#onBuscarClick" maxWidth="Infinity" />
+    <Button maxWidth="Infinity" onAction="#onBuscarClick" text="Buscar" />
 
     <Label fx:id="lblEstado" text="Esperando datos..." textFill="#0055aa" wrapText="true">
         <VBox.margin>
             <Insets top="10.0" />
         </VBox.margin>
     </Label>
+   <Button fx:id="onListarClick" mnemonicParsing="false" onAction="#onListarCLick" text="lista de pacientes" />
+   <ListView fx:id="listaUno" onEditStart="#onListarCLick" prefHeight="200.0" prefWidth="200.0" />
 </VBox>
