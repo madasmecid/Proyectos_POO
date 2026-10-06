@@ -8,9 +8,11 @@ import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 
+import javax.swing.*;
 import java.util.ArrayList;
 
 public class HelloController {
+    //AQUI AGREGO LOS BOTONES O TEXTOS, TODO LO VISUAL
     @FXML
     private TextField txtRut;
     @FXML
@@ -21,6 +23,9 @@ public class HelloController {
      private TextField txtPeso;
 
      @FXML
+     private TextField txtNumeroHijos;
+
+     @FXML
      private ListView<String> listaUno;
 
 
@@ -29,11 +34,13 @@ public class HelloController {
      @FXML
      private Label lblEstado;
 
-     private final ArrayList<Paciente> listaPacientes = new ArrayList<>();
 
+     //LISTAS PARA GUARDAR PACIENTES Y OTRA PARA LISTAR
+     private final ArrayList<Paciente> listaPacientes = new ArrayList<>();
      private ObservableList<Paciente> listaNueva = FXCollections.observableArrayList();
 
     @FXML
+    //PRIMER METODO CLICK DONDE AL INGRESAR DATOS ESTOS SE GUARDAN
     private void onGuardarClick() {
         try {
             String rut = txtRut.getText().trim();
@@ -47,7 +54,9 @@ public class HelloController {
             int edad = Integer.parseInt(txtEdad.getText().trim());
             double peso = Double.parseDouble(txtPeso.getText().trim());
 
-            Paciente nuevo = new Paciente(rut, nombre, edad, peso);
+            int numHijos = Integer.parseInt(txtNumeroHijos.getText().trim());
+
+            Paciente nuevo = new Paciente(rut, nombre, edad, peso, numHijos);
             listaPacientes.add(nuevo);
 
             lblEstado.setText("Guardado con exito: " + nombre);
@@ -56,6 +65,7 @@ public class HelloController {
             txtNombre.clear();
             txtEdad.clear();
             txtPeso.clear();
+            txtNumeroHijos.clear();
         } catch (NumberFormatException e) {
             lblEstado.setText("Error: edad y peso deben ser numeros validos");
         }
@@ -93,7 +103,8 @@ public class HelloController {
 
             // Recorremos tu ArrayList y los metemos al ListView
             for (Paciente p : listaPacientes) {
-                String fila = "RUT: " + p.getRut() + " - " + p.getNombre() + " (" + p.getEdad() + " años)";
+                String fila = "RUT: " + p.getRut() + " - " + p.getNombre() + " (" + p.getEdad() + " años) -- peso: "+ p.getPesoKg()+ " -- hijos:" +
+                        p.getNumHijos();
                 listaUno.getItems().add(fila);
             }
 

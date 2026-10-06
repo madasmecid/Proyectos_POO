@@ -15,6 +15,7 @@
     <TextField fx:id="txtNombre" promptText="Nombre completo" />
     <TextField fx:id="txtEdad" promptText="Edad" />
     <TextField fx:id="txtPeso" promptText="Peso (kg)" />
+   <TextField fx:id="txtNumeroHijos" promptText="numero de hijos" />
 
     <Button maxWidth="Infinity" onAction="#onGuardarClick" text="Guardar Ficha" />
 

@@ -6,12 +6,14 @@ public class Paciente {
     private String nombre;
     private int edad;
     private double pesoKg;
+    private int numHijos;
 
-    public Paciente(String rut, String nombre, int edad, double pesoKg) {
-        this.rut = rut;
+    public Paciente(String nombre, String rut, int edad, double pesoKg, int numHijos) {
         this.nombre = nombre;
+        this.rut = rut;
         this.edad = edad;
         this.pesoKg = pesoKg;
+        this.numHijos = numHijos;
     }
 
     public String getNombre() {
@@ -39,6 +41,14 @@ public class Paciente {
 
     public void setEdad(int edad) {
         this.edad = edad;
+    }
+
+    public int getNumHijos() {
+        return numHijos;
+    }
+
+    public void setNumHijos(int numHijos) {
+        this.numHijos = numHijos;
     }
 
     public double getPesoKg() {
