@@ -56,7 +56,7 @@ public class HelloController {
 
             int numHijos = Integer.parseInt(txtNumeroHijos.getText().trim());
 
-            Paciente nuevo = new Paciente(rut, nombre, edad, peso, numHijos);
+            Paciente nuevo = new Paciente(nombre, rut, edad, peso, numHijos);
             listaPacientes.add(nuevo);
 
             lblEstado.setText("Guardado con exito: " + nombre);
