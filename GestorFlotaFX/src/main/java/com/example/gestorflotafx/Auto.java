@@ -4,7 +4,7 @@ public class Auto extends Vehiculo {
 
     private int cantidadPuertas;
 
-    public Auto() {
+    public Auto(String patente, String marca, int anio, int puertas) {
     }
 
     @Override

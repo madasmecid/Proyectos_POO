@@ -4,7 +4,7 @@ public class Furgon extends Vehiculo {
 
     private double capacidadCargaKg;
 
-    public Furgon() {
+    public Furgon(String patente, String marca, int anio, double carga) {
     }
 
     public Furgon(String patente, String marca, String anio, double capacidadCargaKg) {
