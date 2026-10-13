@@ -5,12 +5,12 @@ public abstract class Vehiculo {
 
     private String patente;
     private String marca;
-    private String anio;
+    private int anio;
 
     public Vehiculo() {
     }
 
-    public Vehiculo(String patente, String marca, String anio) {
+    public Vehiculo(String patente, String marca, int anio) {
         this.patente = patente;
         this.marca = marca;
         this.anio = anio;
