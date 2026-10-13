@@ -4,15 +4,10 @@ public class Auto extends Vehiculo {
 
     private int cantidadPuertas;
 
-    public Auto(String patente, String marca, int anio, int puertas) {
+    public Auto() {
     }
 
-    @Override
-    public String getDetalleEspecifico() {
-        return "Auto - " + cantidadPuertas + " puertas";
-    }
-
-    public Auto(String patente, String marca, String anio, int cantidadPuertas) {
+    public Auto(String patente, String marca, int anio, int cantidadPuertas) {
         super(patente, marca, anio);
         this.cantidadPuertas = cantidadPuertas;
     }
@@ -23,5 +18,10 @@ public class Auto extends Vehiculo {
 
     public void setCantidadPuertas(int cantidadPuertas) {
         this.cantidadPuertas = cantidadPuertas;
+    }
+
+    @Override
+    public String getDetalleEspecifico() {
+        return "Auto - " + cantidadPuertas + " puertas";
     }
 }

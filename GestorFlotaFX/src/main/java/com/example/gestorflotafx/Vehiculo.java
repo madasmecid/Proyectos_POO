@@ -1,6 +1,5 @@
 package com.example.gestorflotafx;
 
-
 public abstract class Vehiculo {
 
     private String patente;
@@ -16,14 +15,6 @@ public abstract class Vehiculo {
         this.anio = anio;
     }
 
-    public String getMarca() {
-        return marca;
-    }
-
-    public void setMarca(String marca) {
-        this.marca = marca;
-    }
-
     public String getPatente() {
         return patente;
     }
@@ -32,11 +23,19 @@ public abstract class Vehiculo {
         this.patente = patente;
     }
 
-    public String getAnio() {
+    public String getMarca() {
+        return marca;
+    }
+
+    public void setMarca(String marca) {
+        this.marca = marca;
+    }
+
+    public int getAnio() {
         return anio;
     }
 
-    public void setAnio(String anio) {
+    public void setAnio(int anio) {
         this.anio = anio;
     }
 
