@@ -57,12 +57,14 @@ public class Auto extends Vehiculo implements IGarantizable{
     
 
     @Override
-    public boolean tieneGarantia() {
-        return this.garantiaActiva;
+    public void tieneGarantia() {
+
+        if get
+
     }
 
     @Override
-    public boolean activarGarantia() {
+    public void activarGarantia() {
         return this.vigenciaGarantia;
     }
 

@@ -10,8 +10,8 @@ package tallermecanicoautofix;
  */
 public interface IGarantizable {
     
-    public boolean tieneGarantia();
+    public void tieneGarantia();
     
-    public boolean activarGarantia();
+    public void activarGarantia();
     
 }
