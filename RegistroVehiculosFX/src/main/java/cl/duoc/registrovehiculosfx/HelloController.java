@@ -28,18 +28,20 @@ public class HelloController {
 
     private ObservableList<Vehiculo> listaVehiculos = FXCollections.observableArrayList();
 
+    private VehiculoDAO vehiculoDAO = new VehiculoDAO();
+
+
     @FXML
     public void initialize(){
         colPatente.setCellValueFactory(new PropertyValueFactory<>("patente"));
         colMarca.setCellValueFactory(new PropertyValueFactory<>("marca"));
         colPrecio.setCellValueFactory(new PropertyValueFactory<>("precio"));
 
-
+        //CARGAR DATOS DESDE JSON A LA OBSERVABLELIST
+        listaVehiculos.addAll(vehiculoDAO.cargar());
 
         tablaVehiculos.setItems(listaVehiculos);
 
-        Vehiculo vehiculo1 = new Vehiculo("rrtr-56", 555665,"Kia");
-        listaVehiculos.add(vehiculo1);
     }
 
 
@@ -52,6 +54,9 @@ public class HelloController {
         Vehiculo nuevoV = new Vehiculo(patente,precio,marca);
 
         listaVehiculos.add(nuevoV);
+
+        //GUARDAR EN JSON
+        vehiculoDAO.guardar(listaVehiculos);
 
 
 
@@ -66,6 +71,8 @@ public class HelloController {
 
         if(seleccionado != null){
             listaVehiculos.remove(seleccionado);
+
+            vehiculoDAO.guardar(listaVehiculos);
         }
     }
 }
