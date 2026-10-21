@@ -14,8 +14,7 @@ public class Aereo extends Vehiculo {
     public Aereo(double distanciaVuelo) {
         this.distanciaVuelo = distanciaVuelo;
     }
-    
-    
+
 
     public Aereo(String nombre, String marca, String modelo, String matricula, double distanciaVuelo) {
         super(nombre, marca, modelo, matricula);
@@ -32,20 +31,19 @@ public class Aereo extends Vehiculo {
 
     @Override
     public String toString() {
-        return "Aereo{"+super.toString()+ " distanciaVuelo=" + distanciaVuelo + '}';
+        return "Aereo{" + super.toString() + " distanciaVuelo=" + distanciaVuelo + '}';
     }
-    
-    
-    public void despegar(){
-        System.out.println("Vehiculo " + super.getNombre()+ " "+super.getMarca()+ " despega!!");
+
+
+    public void despegar() {
+        System.out.println("Vehiculo " + super.getNombre() + " " + super.getMarca() + " despega!!");
     }
-    
-   
+
+
     @Override
     public void mantenimiento() {
-        System.out.println("Vehiculo " + super.getNombre()+ " entra en mantenimiento de tren de alas");
+        System.out.println("Vehiculo " + super.getNombre() + " entra en mantenimiento de tren de alas");
     }
-    
-    
-    
+
+
 }

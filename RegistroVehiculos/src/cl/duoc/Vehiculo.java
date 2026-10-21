@@ -8,12 +8,12 @@ package cl.duoc;
  *
  * @author Compu
  */
-public abstract class  Vehiculo {
-    
+public abstract class Vehiculo {
+
     private String nombre, marca, modelo, matricula;
-    
-    public Vehiculo (){
-        
+
+    public Vehiculo() {
+
     }
 
     public Vehiculo(String nombre, String marca, String modelo, String matricula) {
@@ -22,14 +22,13 @@ public abstract class  Vehiculo {
         this.modelo = modelo;
         this.matricula = matricula;
     }
-    
-    
-    
-    public String getNombre(){
+
+
+    public String getNombre() {
         return nombre;
     }
-    
-    public void setNombre(String nombre){
+
+    public void setNombre(String nombre) {
         this.nombre = nombre;
     }
 
@@ -61,9 +60,8 @@ public abstract class  Vehiculo {
     public String toString() {
         return "Vehiculo{" + "nombre=" + nombre + ", marca=" + marca + ", modelo=" + modelo + ", matricula=" + matricula + '}';
     }
-    
-    
-    
-   abstract public void mantenimiento();
-    
+
+
+    abstract public void mantenimiento();
+
 }

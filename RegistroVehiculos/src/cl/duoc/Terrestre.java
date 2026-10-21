@@ -14,36 +14,35 @@ public class Terrestre extends Vehiculo {
     public Terrestre(int numeroRuedas) {
         this.numeroRuedas = numeroRuedas;
     }
-    
-    
- 
+
+
     public Terrestre(String nombre, String marca, String modelo, String matricula, int numeroRuedas) {
         super(nombre, marca, modelo, matricula);
         this.numeroRuedas = numeroRuedas;
     }
-    
-    public int getNumeroRuedas(){
+
+    public int getNumeroRuedas() {
         return numeroRuedas;
     }
-    
+
     public void setNumeroRuedas(int numeroRuedas) {
         this.numeroRuedas = numeroRuedas;
     }
 
     @Override
     public String toString() {
-        return "Terrestre{"+super.toString() + " numeroRuedas=" + numeroRuedas + '}';
+        return "Terrestre{" + super.toString() + " numeroRuedas=" + numeroRuedas + '}';
     }
-    
-    public void detenerSemaforo(){
-        System.out.println("Vehiculo " + super.getNombre()+ " se detiene en el semaforo correctamente");
-    }    
-    
+
+    public void detenerSemaforo() {
+        System.out.println("Vehiculo " + super.getNombre() + " se detiene en el semaforo correctamente");
+    }
+
 
     @Override
     public void mantenimiento() {
-        System.out.println("Vehiculo " + super.getNombre()+ " entro en mantenimiento de ruedas.");
+        System.out.println("Vehiculo " + super.getNombre() + " entro en mantenimiento de ruedas.");
     }
-    
-    
+
+
 }
