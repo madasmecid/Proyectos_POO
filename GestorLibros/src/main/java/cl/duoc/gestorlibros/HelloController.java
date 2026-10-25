@@ -38,8 +38,16 @@ public class HelloController {
         colPaginas.setCellValueFactory(new PropertyValueFactory<>("paginas"));
 
         tablaLibros.setItems(listaLibros);
-
         listaLibros.addAll(librosdao.cargar());
+
+        tablaLibros.getSelectionModel().selectedItemProperty().addListener((obs, anterior, seleccionado) ->{
+            if (seleccionado != null){
+                txtIsbn.setText(seleccionado.getIsbn());
+                txtTitulo.setText(seleccionado.getTitulo());
+                txtPaginas.setText(String.valueOf(seleccionado.getPaginas()));
+
+            }
+        });
 
 
     }
@@ -63,6 +71,23 @@ public class HelloController {
             listaLibros.remove(seleccionado);
 
             librosdao.guardar(listaLibros);
+        }
+    }
+
+    @FXML
+    protected  void onActualizarClick(){
+        Libro seleccionado = tablaLibros.getSelectionModel().getSelectedItem();
+        if (seleccionado != null){
+            seleccionado.setIsbn((txtIsbn.getText()));
+            seleccionado.setTitulo(txtTitulo.getText());
+            seleccionado.setPaginas(Integer.parseInt(txtPaginas.getText()));
+
+            tablaLibros.refresh();
+            librosdao.guardar(listaLibros);
+
+            txtPaginas.clear();
+            txtTitulo.clear();
+            txtIsbn.clear();
         }
     }
 }
