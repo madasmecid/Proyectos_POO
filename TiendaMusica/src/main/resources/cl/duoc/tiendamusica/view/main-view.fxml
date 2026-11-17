@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cl.duoc.tiendamusica.controller.InstrumentoController">
+   <children>
+      <TextField fx:id="txtCodigo" layoutX="23.0" layoutY="21.0" promptText="codigo" />
+      <TextField fx:id="txtMarca" layoutX="23.0" layoutY="61.0" promptText="marca" />
+      <TableView fx:id="tabla" layoutX="5.0" layoutY="150.0" prefHeight="200.0" prefWidth="600.0">
+        <columns>
+          <TableColumn fx:id="colCodigo" prefWidth="75.0" text="Codigo" />
+          <TableColumn fx:id="colMarca" prefWidth="75.0" text="Marca" />
+            <TableColumn fx:id="colPrecio" prefWidth="75.0" text="Precio" />
+            <TableColumn fx:id="colDetalle" prefWidth="75.0" text="Detalle" />
+        </columns>
+         <columnResizePolicy>
+            <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+         </columnResizePolicy>
+      </TableView>
+      <Button layoutX="194.0" layoutY="46.0" mnemonicParsing="false" onAction="#agregar" text="Agregar" />
+      <Button layoutX="277.0" layoutY="46.0" mnemonicParsing="false" onAction="#eliminar" text="Eliminar" />
+      <ComboBox fx:id="cmbDetalle" layoutX="346.0" layoutY="21.0" prefWidth="150.0" promptText="Detalle" />
+      <Label fx:id="lblDetalle" layoutX="521.0" layoutY="25.0" text="cuerdas" />
+      <Label fx:id="lblMensaje" layoutX="277.0" layoutY="369.0" />
+      <TextField fx:id="txtDetalle" layoutX="347.0" layoutY="74.0" />
+   </children>
+</AnchorPane>

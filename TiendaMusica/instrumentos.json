@@ -1,0 +1,17 @@
+[
+  {
+    "cuerdas": 6,
+    "marca": "fender",
+    "codigo": "445"
+  },
+  {
+    "teclas": 89,
+    "marca": "yamaha",
+    "codigo": "445"
+  },
+  {
+    "cuerdas": 6,
+    "marca": "gibson",
+    "codigo": "566775"
+  }
+]

@@ -1,4 +1,11 @@
-package cl.duoc.registroalquilervehiculo.DAO;
+package cl.duoc.registroalquilervehiculo.dao;
 
-public interface IVehiculo {
+import cl.duoc.registroalquilervehiculo.modelo.Vehiculo;
+
+import java.util.List;
+
+public interface IVehiculoDao {
+    List<Vehiculo> cargar();
+
+    void guardar(List<Vehiculo> lista);
 }

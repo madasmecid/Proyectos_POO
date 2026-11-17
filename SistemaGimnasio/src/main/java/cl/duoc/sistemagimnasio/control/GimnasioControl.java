@@ -8,8 +8,12 @@ import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.stage.Stage;
 
 public class GimnasioControl {
     @FXML
@@ -157,6 +161,21 @@ public class GimnasioControl {
         lblMensaje.setText(mensaje);
         lblMensaje.setStyle(esError ? "-fx-text-fill: red; -fx-font-weight: bold;"
                 : "-fx-text-fill: green; -fx-font-weight: bold;");
+    }
+
+    @FXML
+    protected void onClickFormulario(){
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/cl/duoc/sistemagimnasio/vista/segunda.fxml"));
+            Parent root = loader.load();
+
+            Stage stage = (Stage) tblSocios.getScene().getWindow();
+
+            stage.setScene(new Scene(root,500, 450));
+            stage.setTitle("Saludo");
+        }catch (Exception e){
+            e.printStackTrace();
+        }
     }
 }
 
